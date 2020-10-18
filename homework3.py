@@ -8,7 +8,7 @@ headers = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
 res = requests.get(my_url,headers=headers) #HTML,CSS,JS
 soup=BeautifulSoup(res.text,'html.parser') #크롤링 기본줄
-client = MongoClient('localhost', 27017)
+client = MongoClient('localhost', 27017)/#db 주소
 db = client.myData
 
 musics = soup.select("#body-content > div.newest-list > div > table > tbody > tr") # >안에있는
